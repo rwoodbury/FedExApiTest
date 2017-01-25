@@ -5,16 +5,6 @@
 //	Version 1.0.0
 //	Created and tested using PHP 5.5.
 
-function pout($s)
-{
-	fwrite( STDOUT, $s );
-}
-
-function perr($s)
-{
-	fwrite( STDERR, $s );
-}
-
 /**
  * Convert all errors into ErrorExceptions
  */
@@ -141,7 +131,8 @@ $request = [
 ];
 
 //	Show us the request data structure.
-pout( print_r($request, true) . PHP_EOL );
+print_r($request);
+echo PHP_EOL;
 
 
 //	Set options for SOAP call.
@@ -166,12 +157,12 @@ $response = $client->getRates($request);
 //	There will be a pause while waiting for FedEx to respond.
 
 //	Show us the response data structure.
-pout( print_r($response, true) );
+print_r($response);
 
 
 //	End 'try'.
 }
 catch ( Exception $e ) {
-	perr( $e . PHP_EOL );
+	fwrite( STDERR, $e . PHP_EOL );
 	exit( $e->getCode() );
 }
