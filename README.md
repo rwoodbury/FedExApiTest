@@ -15,7 +15,7 @@ Their raw XML sample files can be modified if you are comfortable with SOAP XML 
 
 This PHP code has been greatly simplified from their examples. All values are hard coded in one easy to visualize single nested structure so that the full structure and data membership can be seen at a glance. The `$request` associative array, or structure, is then converted to SOAP XML by the `$client` instance of the standard PHP SoapClient class before being sent to FedEx. Hopefully there are enough comments in the script.
 
-Check the FedEx documentation for additional structure members and for other valid values for enumerated types.
+Check the FedEx documentation or in the WSDL file for additional structure members and for other valid values for enumerated types.
 
 # License
 This software is made available with the standard MIT license, without warranty of any kind.
